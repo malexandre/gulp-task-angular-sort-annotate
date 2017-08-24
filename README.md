@@ -11,17 +11,22 @@ yarn add -D gulp-task-angular-sort-annotate
 
 ## Usage
 
+This is the default options :
+
 ```javascript
 const gulp = require('gulp')
 
 require('gulp-task-angular-sort-annotate')(gulp, {
-    htmlFile: 'app/client/index.html',
-    angularScripts: ['app/client/**/*.js', '!/node_modules', '!/build'],
-    htmlDestinationFolder: '/build',
-    jsDestinationFolder: '/build/js',
-    uglify: true,
-    concat: true,
-    ignorePath: ['/build']
+    htmlFile: 'index.html',
+    angularScripts: ['/**/*.js', '!/node_modules', '!/build'],
+    htmlDestinationFolder: 'build',
+    jsDestinationFolder: 'build/js',
+    injectOptions: {
+        relative: false,
+        ignorePath: ['build'],
+        addRootSlash: true,
+        starttag: '<!-- inject:angular-sort-annotate:js -->'
+    }
 })
 ```
 
