@@ -21,6 +21,8 @@ require('gulp-task-angular-sort-annotate')(gulp, {
     angularScripts: ['/**/*.js', '!/node_modules', '!/build'],
     htmlDestinationFolder: 'build',
     jsDestinationFolder: 'build/js',
+    concatName: 'app.js',
+    uglifySuffix: '.min',
     injectOptions: {
         relative: false,
         ignorePath: ['build'],

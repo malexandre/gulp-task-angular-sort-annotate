@@ -5,6 +5,8 @@ const defaultOptions = {
     angularScripts: ['/**/*.js', '!/node_modules', '!/build'],
     htmlDestinationFolder: 'build',
     jsDestinationFolder: 'build/js',
+    concatName: 'app.js',
+    uglifySuffix: '.min',
     injectOptions: {
         relative: false,
         ignorePath: ['build'],
@@ -13,7 +15,7 @@ const defaultOptions = {
     }
 }
 
-const task = (gulp, options, concat=false, uglify=false) => {
+const task = (gulp, options, concat = false, uglify = false) => {
     let buildScript = gulp
         .src(options.angularScripts)
         .pipe(plugins.plumber())
@@ -21,11 +23,12 @@ const task = (gulp, options, concat=false, uglify=false) => {
         .pipe(plugins.angularFilesort())
 
     if (concat) {
-        buildScript = buildScript.pipe(plugins.concat())
+        buildScript = buildScript.pipe(plugins.concat(options.concatName))
     }
 
     if (uglify) {
         buildScript = buildScript.pipe(plugins.uglify())
+        buildScript = buildScript.pipe(plugins.rename((path) => path.basename += options.uglifySuffix))
     }
 
     buildScript = buildScript.pipe(gulp.dest(`${options.jsDestinationFolder}`))
