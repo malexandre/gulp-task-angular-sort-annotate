@@ -1,6 +1,6 @@
 # GULP-TASK-ANGULAR-SORT-ANNOTATE
 
-This module create a gulp task `angular-sort-annotate` that find all the angular files, annotate them, sort them, and inject them in your html file.
+This module create gulp tasks that find all the angular files, annotate them, sort them, and inject them in your html file.
 
 ## Installation
 
@@ -30,6 +30,11 @@ require('gulp-task-angular-sort-annotate')(gulp, {
         starttag: '<!-- inject:angular-sort-annotate:js -->'
     }
 })
+
+gulp.task('prod', ['gulp-angular-sort-annotate-concat-uglify'])
+// gulp.task('prod', ['gulp-angular-sort-annotate-concat'])
+// gulp.task('prod', ['gulp-angular-sort-annotate-uglify'])
+gulp.task('default', ['gulp-angular-sort-annotate'])
 ```
 
 For the injection to work, you need this in your html file:
