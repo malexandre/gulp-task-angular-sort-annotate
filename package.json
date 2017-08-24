@@ -1,0 +1,21 @@
+{
+  "name": "gulp-task-angular-sort-annotate",
+  "version": "1.0.0",
+  "description": "Gulp task to include the project scripts into the HTML file with sorting & annotation",
+  "main": "index.js",
+  "repository": "https://github.com/malexandre/gulp-task-angular-sort-annotate.git",
+  "author": "Marc Alexandre <github@malexandre.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-plugins": "^0.0.18",
+    "gulp-plumber": "^1.1.0",
+    "gulp-uglify": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-malexandre": "^1.0.2"
+  }
+}
