@@ -38,7 +38,7 @@ module.exports = (gulp, options) => {
                     relative: false,
                     ignorePath: options.ignorePath,
                     addRootSlash: true,
-                    name: 'angular-sort-annotate'
+                    starttag: '<!-- inject:angular-sort-annotate:js -->'
                 })
             )
             .pipe(gulp.dest(options.htmlDestinationFolder))
