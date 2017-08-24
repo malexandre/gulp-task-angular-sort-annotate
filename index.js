@@ -1,4 +1,4 @@
-const plugins = require('gulp-plugins')()
+const plugins = require('gulp-load-plugins')()
 
 const defaultOptions = {
     htmlFile: 'index.html',
