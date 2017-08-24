@@ -28,7 +28,7 @@ module.exports = (gulp, options) => {
             buildScript = buildScript.pipe(plugins.uglify())
         }
 
-        buildScript = buildScript.pipe(gulp.dest(`${options.jsDestinationFolder}/js`))
+        buildScript = buildScript.pipe(gulp.dest(`${options.jsDestinationFolder}`))
 
         return gulp
             .src(options.htmlFile)
