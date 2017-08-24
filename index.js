@@ -45,7 +45,7 @@ module.exports = (gulp, options) => {
     options.injectOptions = Object.assign(defaultOptions.injectOptions, options.injectOptions)
 
     gulp.task('angular-sort-annotate', () => task(gulp, options))
-    gulp.task('angular-sort-annotate-concat', () => task(gulp, options, false, true))
+    gulp.task('angular-sort-annotate-concat', () => task(gulp, options, true, false))
     gulp.task('angular-sort-annotate-uglify', () => task(gulp, options, false, true))
     gulp.task('angular-sort-annotate-concat-uglify', () => task(gulp, options, true, true))
 }
